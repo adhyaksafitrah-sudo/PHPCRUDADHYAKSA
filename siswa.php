@@ -219,7 +219,10 @@
                                         <?php
                                         include 'koneksi.php';
                                         $no = 1;
-                                        $data = mysqli_query($koneksi,"select * from siswa");
+                                        $data = mysqli_query($koneksi, "SELECT s.*, k.nama_kelas, j.nama_jurusan
+                                            FROM siswa s
+                                            LEFT JOIN kelas k ON s.kelas = k.id_kelas
+                                            LEFT JOIN jurusan j ON s.jurusan = j.id_jurusan");
                                         while($d = mysqli_fetch_array($data)){
                                         ?>
                                         <tr>
@@ -228,12 +231,12 @@
                                             <th><?php echo $d['nama']; ?></th>
                                             <th><?php echo $d['jk']; ?></th>
                                             <th><?php echo $d['tgl_lahir']; ?></th>
-                                            <th><?php echo $d['kelas']; ?></th>
-                                            <th><?php echo $d['jurusan']; ?></th>
+                                            <th><?php echo !empty($d['nama_kelas']) ? $d['nama_kelas'] : $d['kelas']; ?></th>
+                                            <th><?php echo !empty($d['nama_jurusan']) ? $d['nama_jurusan'] : $d['jurusan']; ?></th>
                                             <th><?php echo $d['keterangan']; ?></th>
                                             <td>
-                                                <a href="#" class="btn btn-success">Edit</a> 
-                                                <a href="#" class="btn btn-danger">Hapus</a>
+                                                <a href="edit_siswa.php?nis=<?php echo $d['nis']; ?>" class="btn btn-success">Edit</a> 
+                                                <a href="hapus_siswa.php?nis=<?php echo $d['nis']; ?>" class="btn btn-danger">Hapus</a>
                                         </td>
                                         </tr>
                                         <?php

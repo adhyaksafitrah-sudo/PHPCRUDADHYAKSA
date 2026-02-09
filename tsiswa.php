@@ -4,20 +4,16 @@
 include 'koneksi.php';
 
 // Ambil data dari form
-$nama        = $_POST['nama'];
-$jk          = $_POST['jk'];
-$tgl_lahir   = $_POST['tgl_lahir'];
-$kelas       = $_POST['kelas'];
-$jurusan     = $_POST['jurusan'];
-$keterangan  = $_POST['keterangan'];
+$nis        = isset($_POST['nis']) ? trim($_POST['nis']) : '';
+$nama        = isset($_POST['nama']) ? trim($_POST['nama']) : '';
+$jk          = isset($_POST['jk']) ? $_POST['jk'] : '';
+$tgl_lahir   = isset($_POST['tgl_lahir']) ? $_POST['tgl_lahir'] : '';
+$kelas       = isset($_POST['kelas']) ? trim($_POST['kelas']) : '';
+$jurusan     = isset($_POST['jurusan']) ? trim($_POST['jurusan']) : '';
+$keterangan  = isset($_POST['keterangan']) ? trim($_POST['keterangan']) : '';
 
-// Pastikan semua nilai string **di dalam tanda kutip**
-$query = "
-    INSERT INTO siswa (nama, jk, tgl_lahir, kelas, jurusan, keterangan)
-    VALUES ('$nama', '$jk', '$tgl_lahir', '$kelas', '$jurusan', '$keterangan')
-";
-
-// Jalankan query
+// Insert ke database
+$query = "INSERT INTO siswa (nis, nama, jk, tgl_lahir, kelas, jurusan, keterangan) VALUES ('$nis', '$nama', '$jk', '$tgl_lahir', '$kelas', '$jurusan', '$keterangan')";
 mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
 
 // Arahkan kembali

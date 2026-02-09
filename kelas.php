@@ -218,8 +218,8 @@
                                             <th><?php echo $d['id_kelas']; ?></th>
                                             <th><?php echo $d['nama_kelas']; ?></th>
                                             <th>
-                                                <a href="#" class="btn btn-success">Edit</a> 
-                                                <a href="#" class="btn btn-danger">Hapus</a>
+                                                <a href="edit_kelas.php?id=<?php echo $d['id_kelas']; ?>" class="btn btn-success">Edit</a> 
+                                                <a href="hapus_kelas.php?id=<?php echo $d['id_kelas']; ?>" class="btn btn-danger">Hapus</a>
                                             </th>
                                         </tr>
                                         <?php

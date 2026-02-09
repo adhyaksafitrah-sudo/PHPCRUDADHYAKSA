@@ -169,7 +169,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Adhyaksa - Admin</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Yuka - Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -192,85 +192,24 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                <h1 class="h3 mb-2 text-gray-800">Form Tambah Data Siswa</h1>
+                <h1 class="h3 mb-2 text-gray-800">Form Tambah Data Jurusan</h1>
 
-<?php
-include 'koneksi.php';
-?>
-
-<form method="POST" action="tsiswa.php">
-  <!-- <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">ID Kelas</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="id" name="id">
-    </div>
-  </div> -->
+<form method="POST" action="tjurusan.php">
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">NIS</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">ID Jurusan</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="nis" name="nis">
+      <input type="text" class="form-control" id="inputEmail3" name="id_jurusan">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Siswa</label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Jurusan</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="nama" name="nama">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Jenis Kelamin</label>
-    <div class="col-sm-10">
-      <input type="radio" class="form-control" id="jk" name="jk" value="L"> Laki-Laki
-      <input type="radio" class="form-control" id="jk" name="jk" value="P"> Perempuan
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Lahir</label>
-    <div class="col-sm-10">
-      <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">ID Kelas</label>
-    <div class="col-sm-10">
-        <select class="form-control form-control-lg" id="kelas" name="kelas">
-        <option value="">--Pilih Kelas--</option>
-            <?php
-            $kelas_query = mysqli_query($koneksi, "SELECT * FROM kelas");
-            while($k = mysqli_fetch_array($kelas_query)){
-            ?>
-            <option value="<?php echo $k['id_kelas']; ?>"><?php echo $k['nama_kelas']; ?></option>
-            <?php
-            }
-            ?>
-        </select>
-</div>
-  </div>
-<div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Jurusan</label>
-    <div class="col-sm-10">
-        <select class="form-control form-control-lg" id="jurusan" name="jurusan">
-        <option value="">--Pilih Jurusan--</option>
-            <?php
-            $jurusan_query = mysqli_query($koneksi, "SELECT * FROM jurusan");
-            while($j = mysqli_fetch_array($jurusan_query)){
-            ?>
-            <option value="<?php echo $j['id_jurusan']; ?>"><?php echo $j['nama_jurusan']; ?></option>
-            <?php
-            }
-            ?>
-        </select>
-</div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Keterangan</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="keterangan" name="keterangan">
+      <input type="text" class="form-control" id="inputPassword3" name="nama_jurusan">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-  <button type="submit" class="btn btn-primary">Tambah Data</button>
+        <button type="submit" class="btn btn-primary">Tambah Data</button>
 </div>
 </div>
 </form>

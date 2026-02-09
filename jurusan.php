@@ -198,7 +198,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                              <button type="button" class="btn btn-primary">Tambah Data</button>
+                              <a href="tambahjurusan.php" type="button" class="btn btn-primary">Tambah Jurusan</a>
                             
                         </div>
                         <div class="card-body">
@@ -222,8 +222,8 @@
                                             <th><?php echo $d['id_jurusan']; ?></th>
                                             <th><?php echo $d['nama_jurusan']; ?></th>
                                             <th>
-                                               <a href="#" class="btn btn-success">Edit</a> 
-                                               <a href="#" class="btn btn-danger">hapus</a>
+                                               <a href="edit_jurusan.php?id=<?php echo $d['id_jurusan']; ?>" class="btn btn-success">Edit</a> 
+                                               <a href="hapus_jurusan.php?id=<?php echo $d['id_jurusan']; ?>" class="btn btn-danger">hapus</a>
                                             </th>
                                         </tr>
                                         <?php
